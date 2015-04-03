@@ -1,0 +1,21 @@
+[
+{
+  "modid": "PEAA",
+  "name": "PEAA",
+  "description": "add EEAA's Blocks",
+  "version": "@Version@",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "takanasayo"
+  ],
+  "credits": "By ryokusitai",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"ProjectE",
+  "dependencies": ["mod_MinecraftForge"
+  ]
+}
+]
