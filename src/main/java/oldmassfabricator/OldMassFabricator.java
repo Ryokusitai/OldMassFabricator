@@ -1,5 +1,6 @@
 package oldmassfabricator;
 
+import oldmassfabricator.network.PacketHandlerOMF;
 import ic2.api.info.Info;
 import ic2.api.item.IC2Items;
 import chocolate.ObjHandlerChoco;
@@ -54,6 +55,9 @@ public class OldMassFabricator
 				new ItemStack(Items.clock));
 
 		MatterRecipes.registerRecipes();
+		
+		// GUIに表示するデータの同期用
+		PacketHandlerOMF.init();
 	}
 
 	@EventHandler

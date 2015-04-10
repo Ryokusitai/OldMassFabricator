@@ -1,5 +1,7 @@
 package oldmassfabricator;
 
+import oldmassfabricator.network.OMFSyncPKT;
+import oldmassfabricator.network.PacketHandlerOMF;
 import ic2.api.energy.event.EnergyTileLoadEvent;
 import ic2.api.energy.event.EnergyTileUnloadEvent;
 import ic2.api.energy.tile.IEnergySink;
@@ -30,6 +32,8 @@ public class OldMassFabricatorTile extends TileEntity implements IInventory, ISi
 	private int scrap = 0;
 	private final int scrapPoint = 5000;
 	private final int scrapBoxPoint = scrapPoint * 9;
+	
+	private int numUsing;	// GUI同期用のフラグ
 
 	@Override
 	public void updateEntity() {
@@ -48,6 +52,11 @@ public class OldMassFabricatorTile extends TileEntity implements IInventory, ISi
 		if (!worldObj.isRemote) {
 			checkScrap();
 			checkCreateMatter();
+			
+			// clientとの同期
+			if (numUsing > 0) {
+				PacketHandlerOMF.INSTANCE.sendToAll(new OMFSyncPKT(this.energy, this.scrap, this.xCoord, this.yCoord, this.zCoord));
+			}
 		}
 	}
 
@@ -248,10 +257,14 @@ public class OldMassFabricatorTile extends TileEntity implements IInventory, ISi
 	}
 
 	@Override
-	public void openInventory() {}
+	public void openInventory() {
+		this.numUsing++;
+	}
 
 	@Override
-	public void closeInventory() {}
+	public void closeInventory() {
+		this.numUsing--;
+	}
 
 	@Override
 	public boolean isItemValidForSlot(int slot, ItemStack stack)
@@ -370,6 +383,18 @@ public class OldMassFabricatorTile extends TileEntity implements IInventory, ISi
 
 	public int getScrap() {
 		return this.scrap;
+	}
+
+	public double getEnergy() {
+		return this.energy;
+	}
+
+	public void setEnergy(double energy) {
+		this.energy = energy;
+	}
+
+	public void setScrap(int scrap) {
+		this.scrap = scrap;
 	}
 
 }

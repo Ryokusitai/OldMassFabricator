@@ -25,6 +25,7 @@ public class OldMassFabricatorContainer extends Container
 	public OldMassFabricatorContainer(InventoryPlayer invPlayer, OldMassFabricatorTile tile)
 	{
 		this.tile = tile;
+		tile.openInventory();
 
 		// Matter Slot
 		this.addSlotToContainer(new SlotMatter(tile, 1, 114, 18));
@@ -86,7 +87,7 @@ public class OldMassFabricatorContainer extends Container
 				}
 			}
 		}
-		
+
 		// ホットバーがクリックされた
 		if (slotIndex >= this.hotbarIndex && slotIndex < this.hotbarIndex + this.hotbarSize)
 		{
@@ -104,7 +105,7 @@ public class OldMassFabricatorContainer extends Container
 				}
 			}
 		}
-		
+
 		// シフトクリックで移動先スロットが溢れなかった場合は移動元スロットを空にする
 		if (itemstack.stackSize == 0) {
 			slot.putStack((ItemStack)null);
@@ -113,12 +114,12 @@ public class OldMassFabricatorContainer extends Container
 		else {
 			slot.onSlotChanged();
 		}
-		
+
 		// シフトクリック前後で数が変わらなかった = 移動失敗
 		if (itemstack.stackSize == itemstackOrg.stackSize) {
 			return null;
 		}
-		
+
 		slot.onPickupFromSlot(player, itemstack);
 
 		return itemstackOrg;
@@ -133,6 +134,13 @@ public class OldMassFabricatorContainer extends Container
 	public TileEntity getTile()
 	{
 		return tile;
+	}
+
+	@Override
+	public void onContainerClosed(EntityPlayer player)
+	{
+		super.onContainerClosed(player);
+		tile.closeInventory();
 	}
 
 }
