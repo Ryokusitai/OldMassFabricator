@@ -21,18 +21,18 @@ public class OldMassFabricatorTile extends TileEntity implements IInventory, ISi
 {
 	private static final int[] slotsSides = new int[] {1};
 	private static final int[] slotsOther = new int[] {0};
-	// 0がスクラップ 1がマター4
+	// 0がスクラップ 1がマター
 	private ItemStack[] OMFItemStacks = new ItemStack[2];
 
 	// ic2関連
 	private double energy = 0.0D;
-	private final int maxEnergy = 1100000;			// 最大で100万+ちょっと予備EUまで貯蓄可能
+	private final int maxEnergy = 1000000;			// 最大で100万EUまで貯蓄可能
 	private final int needEnergy = 1000000;		// マターの作成に必要なエネルギー(デフォルト100万EU)
 	public boolean addedToEnergyNet = false;	// 何回もイベントを登録しないようにするための判断用
 	private int scrap = 0;
 	private final int scrapPoint = 5000;
 	private final int scrapBoxPoint = scrapPoint * 9;
-	
+
 	private int numUsing;	// GUI同期用のフラグ
 
 	@Override
@@ -52,7 +52,7 @@ public class OldMassFabricatorTile extends TileEntity implements IInventory, ISi
 		if (!worldObj.isRemote) {
 			checkScrap();
 			checkCreateMatter();
-			
+
 			// clientとの同期
 			if (numUsing > 0) {
 				PacketHandlerOMF.INSTANCE.sendToAll(new OMFSyncPKT(this.energy, this.scrap, this.xCoord, this.yCoord, this.zCoord));
@@ -80,9 +80,11 @@ public class OldMassFabricatorTile extends TileEntity implements IInventory, ISi
 	public void checkCreateMatter()
 	{
 
-		if (this.energy >= this.needEnergy)
+		ItemStack stack = this.OMFItemStacks[1];
+
+		if ((stack == null ? true : stack.stackSize < this.getInventoryStackLimit()) && this.energy >= this.needEnergy)
 		{
-			ItemStack stack = this.OMFItemStacks[1];
+
 			if (stack != null && stack.getItem().equals(OldMassFabricator.solidMatter))
 			{
 				OMFItemStacks[1].stackSize++;
@@ -133,6 +135,9 @@ public class OldMassFabricatorTile extends TileEntity implements IInventory, ISi
 	{
 		super.readFromNBT(nbt);
 		this.energy = nbt.getDouble("energy");
+		if (energy < 0) energy = 0.0D;		// 0未満になっていないかどうかチェック
+		if (energy >= this.maxEnergy) energy = maxEnergy;
+
 		this.scrap = nbt.getInteger("scrap");
 
 		NBTTagList list = nbt.getTagList("Items", 10);
