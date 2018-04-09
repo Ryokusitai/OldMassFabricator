@@ -1,11 +1,11 @@
 package oldmassfabricator.network;
 
-import oldmassfabricator.OldMassFabricatorTile;
-import net.minecraft.client.Minecraft;
-import net.minecraft.tileentity.TileEntity;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
+import net.minecraft.client.Minecraft;
+import net.minecraft.tileentity.TileEntity;
+import oldmassfabricator.OldMassFabricatorTile;
 
 public class OMFSyncPKTHandler implements IMessageHandler<OMFSyncPKT, IMessage>
 {

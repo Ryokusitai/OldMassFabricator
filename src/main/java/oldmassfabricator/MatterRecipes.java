@@ -1,17 +1,12 @@
 package oldmassfabricator;
 
+import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.common.registry.GameRegistry;
 import ic2.api.item.IC2Items;
-
-import org.apache.http.MethodNotSupportedException;
-
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
-import cpw.mods.fml.common.Optional;
-import cpw.mods.fml.common.registry.GameRegistry;
-import oldmassfabricator.IndefiniteClassLoader;
 
 public class MatterRecipes
 {

@@ -1,9 +1,9 @@
 package oldmassfabricator.network;
 
-import oldmassfabricator.OldMassFabricator;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.relauncher.Side;
+import oldmassfabricator.OldMassFabricator;
 
 public class PacketHandlerOMF
 {

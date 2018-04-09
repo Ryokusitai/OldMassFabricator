@@ -1,7 +1,7 @@
 package oldmassfabricator.network;
 
-import io.netty.buffer.ByteBuf;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
+import io.netty.buffer.ByteBuf;
 
 public class OMFSyncPKT implements IMessage
 {

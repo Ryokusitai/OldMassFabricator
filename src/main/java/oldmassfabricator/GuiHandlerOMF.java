@@ -1,10 +1,10 @@
 package oldmassfabricator;
 
-import oldmassfabricator.container.OldMassFabricatorContainer;
+import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import cpw.mods.fml.common.network.IGuiHandler;
+import oldmassfabricator.container.OldMassFabricatorContainer;
 
 public class GuiHandlerOMF implements IGuiHandler
 {

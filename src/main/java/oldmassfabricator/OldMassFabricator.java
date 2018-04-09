@@ -1,16 +1,5 @@
 package oldmassfabricator;
 
-import oldmassfabricator.network.PacketHandlerOMF;
-import ic2.api.info.Info;
-import ic2.api.item.IC2Items;
-import chocolate.ObjHandlerChoco;
-import peaa.PEAACore;
-import peaa.utils.GuiHandlerPEAA;
-import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -18,6 +7,14 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import ic2.api.info.Info;
+import ic2.api.item.IC2Items;
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import oldmassfabricator.network.PacketHandlerOMF;
 
 @Mod(modid = OldMassFabricator.MODID, name =  OldMassFabricator.MODNAME, version =  OldMassFabricator.VERSION, dependencies="required-after:IC2;after:solidMatter")
 public class OldMassFabricator

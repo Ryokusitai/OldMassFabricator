@@ -1,9 +1,9 @@
 package oldmassfabricator;
 
-import java.lang.reflect.Method;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+
+import java.lang.reflect.Method;
 
 public class IndefiniteClassLoader
 {

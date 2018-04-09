@@ -1,7 +1,5 @@
 package oldmassfabricator;
 
-import oldmassfabricator.network.OMFSyncPKT;
-import oldmassfabricator.network.PacketHandlerOMF;
 import ic2.api.energy.event.EnergyTileLoadEvent;
 import ic2.api.energy.event.EnergyTileUnloadEvent;
 import ic2.api.energy.tile.IEnergySink;
@@ -16,6 +14,8 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.ForgeDirection;
+import oldmassfabricator.network.OMFSyncPKT;
+import oldmassfabricator.network.PacketHandlerOMF;
 
 public class OldMassFabricatorTile extends TileEntity implements IInventory, ISidedInventory, IEnergySink, IWrenchable
 {
