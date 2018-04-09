@@ -60,8 +60,8 @@ public class MatterRecipes
 		// ゴムの素、イリジウム
 		GameRegistry.addRecipe(new ItemStack(IC2Items.getItem("iridiumOre").getItem(), 1), "MMM", " M ", "MMM", 'M', solidMatter);
 		GameRegistry.addRecipe(new ItemStack(IC2Items.getItem("resin").getItem(), 21), "M M", "   ", "M M", 'M', solidMatter);
-		// ポドゾル、石レンガ、銅、鈴
-		GameRegistry.addRecipe(new ItemStack(Blocks.dirt, 24, 2), "   ", "M M", "MMM", 'M', solidMatter);
+		// 菌糸、石レンガ、銅、鈴
+		GameRegistry.addRecipe(new ItemStack(Blocks.mycelium, 24, 2), "   ", "M M", "MMM", 'M', solidMatter);
 		GameRegistry.addRecipe(new ItemStack(Blocks.stonebrick, 48), "MM ", "MM ", "M  ", 'M', solidMatter);
 		GameRegistry.addRecipe(new ItemStack(IC2Items.getItem("copperOre").getItem(), 5), "  M", "M M", "   ", 'M', solidMatter);
 		GameRegistry.addRecipe(new ItemStack(IC2Items.getItem("tinOre").getItem(), 5), "   ", "M M", "  M", 'M', solidMatter);
