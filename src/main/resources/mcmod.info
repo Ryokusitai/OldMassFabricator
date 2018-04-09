@@ -1,21 +1,22 @@
 [
 {
-  "modid": "PEAA",
-  "name": "PEAA",
-  "description": "add EEAA's Blocks",
-  "version": "@Version@",
-  "mcversion": "1.7.10",
+  "modid": "OldMassFabricator",
+  "name": "OldMassFabricator",
+  "description": "add solid mass fabricator",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authorList": [
-    "takanasayo"
+    "ryokusitai"
   ],
   "credits": "By ryokusitai",
   "logoFile": "",
   "screenshots": [
   ],
-  "parent":"ProjectE",
-  "dependencies": ["mod_MinecraftForge"
+  "parent":"IC2",
+  "dependencies": [
+    "mod_MinecraftForge"
   ]
 }
 ]
