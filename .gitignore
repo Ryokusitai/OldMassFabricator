@@ -1,43 +1,43 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# https://gist.github.com/Choonster/6447037d24d0ed5898b8
+## Based on GitHub's Eclipse .gitignore
 
-# Folder config file
-Desktop.ini
+run/
+.gradle/
+build/
+gradle-app.setting
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+## IntelliJ IDEA
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+.idea/
+*.iml
+*.iws
+*.ipr
 
-# Windows shortcuts
-*.lnk
+## Eclipse
 
-# =========================
-# Operating System Files
-# =========================
+eclipse/
+*.pydevproject
+.project
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
 
-# OSX
-# =========================
+# External tool builders
+.externalToolBuilders/
 
-.DS_Store
-.AppleDouble
-.LSOverride
+# Locally stored "Eclipse launch configurations"
+*.launch
 
-# Thumbnails
-._*
+# CDT-specific
+.cproject
 
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+# PDT-specific
+.buildpath
